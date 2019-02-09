@@ -1,7 +1,7 @@
 html{
     scroll-behavior: smooth;
 }
-body{
+* {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
@@ -14,7 +14,10 @@ a{
 
 ul{ list-style: none; }
 
-
+h2{
+    text-align: center;
+    padding-bottom: 20px;
+}
 @keyframes fade-in{
     from {opacity: 0};
     to {opacity: 1;}
@@ -28,12 +31,14 @@ ul{ list-style: none; }
     text-shadow: 0px 0px 30px black;
     overflow: hidden;
 }
+    .header h1, .header p, .header nav{
+        padding-bottom: 15px;
+        animation: 2s fade-in;
+    }
     .header h1{
         padding-top: 25vh;
     }
-    .header h1, .header p, .header nav{
-        animation: 2s fade-in;
-    }
+    
     .header p{
         font-size: 24px;
     }
@@ -48,8 +53,8 @@ ul{ list-style: none; }
     .navbar li{
         background-color: black;
         min-width: 12em;
-        will-change: transform;
-        transition: transform 0.5s ease-in-out;
+        will-change: transform opacity;
+        transition: transform 0.5s, opacity 1s ease-in-out;
         padding: 10px;
         margin: 10px;
     }
@@ -71,5 +76,63 @@ ul{ list-style: none; }
         opacity: 1;
     }
     .navbar li:hover{
+        opacity: 0.8;
         transform: translateY(2px);
+    }
+
+@media only screen and (min-width: 900px){
+    .container{
+        padding: 0 10vw;
+    }
+    .flexbox{
+        font-size: 20px;
+        justify-content: center;
+        flex-direction: row !important;
+    }
+    .flex-item{
+        margin: 10px !important;
+        width: 20vw !important;
+    }
+}
+.container{
+    padding-top: 20vh;
+    justify-content: center;
+    min-height: 100vh;
+}
+.container h2{
+    text-align: center;
+}
+
+.flexbox{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.flex-item{
+    min-width: 200px;
+    width: 80vw;
+    flex-direction: column;
+    display: flex;
+    background-color: #ddd;
+    margin: 10px 0px;
+    text-align: center;
+    box-shadow: 0px 0px 30px #bbb;
+}
+
+    .flex-item a{
+        font-size: 16px;
+        padding: 10px;
+        background-color: black;
+        will-change: opacity;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .flex-item a:hover{
+        opacity: 0.7;
+    }
+    .flex-item p{
+        justify-content: center;
+        padding: 10px;
     }
