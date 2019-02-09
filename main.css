@@ -1,0 +1,75 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+ul{ list-style: none; }
+
+
+@keyframes fade-in{
+    from {opacity: 0};
+    to {opacity: 1;}
+}
+
+.header{
+    height: 100vh;
+    background: url("https://source.unsplash.com/featured/?dark,black,technology") center/cover no-repeat;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 30px black;
+    overflow: hidden;
+}
+    .header h1{
+        padding-top: 25vh;
+    }
+    .header h1, .header p, .header nav{
+        animation: 2s fade-in;
+    }
+    .header p{
+        font-size: 24px;
+    }
+
+.navbar ul{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .navbar li{
+        background-color: black;
+        min-width: 12em;
+        will-change: transform;
+        transition: transform 0.5s ease-in-out;
+        padding: 10px;
+        margin: 10px;
+    }
+        
+    .navbar li::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 15px black;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        will-change: opacity;
+    }
+    .navbar li:hover::after{
+        opacity: 1;
+    }
+    .navbar li:hover{
+        transform: translateY(2px);
+    }
