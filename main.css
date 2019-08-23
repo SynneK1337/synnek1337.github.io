@@ -75,6 +75,7 @@ h2{
     }
     .flex-item{
         margin: 10px !important;
+        margin-bottom: 50px !important;
         width: 20vw !important;
     }
     .flex-img{
